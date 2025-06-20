@@ -56,7 +56,6 @@
     <a class="px-6 py-3 border border-black text-black bg-orange-600 rounded">Hire via axlr8</a>
   </div>
 </section>
-<!-- How we work Section -->
 <section class="bg-[#FAF9F4] py-20 px-6 md:px-20 text-center relative overflow-hidden" id="how-we-work">
   <!-- Heading -->
   <h2 class="text-4xl md:text-5xl font-bold mb-16">How we work</h2>
@@ -96,9 +95,169 @@
     <a href="#form" class="bg-orange-600 text-white px-6 py-3 rounded font-mono font-bold">Apply now</a>
   </div>
 </section>
-  <!-- Why Axlr8 Section -->
+<section id="card-stack-section" class="relative w-full" style="height: 400vh;">
+  <div class="sticky top-0 h-screen w-full flex items-center justify-center bg-gray-50">
+    <div class="container px-4 lg:px-8 mx-auto h-full flex flex-col justify-center">
+      <div class="relative flex-1 flex items-center justify-center" style="perspective: 1000px;">
+        <!-- Card 4 (Bottom) -->
+        <div id="stack-card4" class="absolute w-[90vw] max-w-3xl mx-auto h-[50vh] min-h-[300px] max-h-[600px] rounded-2xl border border-white/20 backdrop-blur-md transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] flex items-center justify-center"
+             style="background: rgba(180, 180, 180, 0.7); box-shadow: 0 8px 20px rgba(0,0,0,0.1);">
+          <span class="text-gray-600 text-3xl md:text-4xl font-medium lowercase opacity-0 transition-opacity duration-300">feature 4</span>
+        </div>
+        
+        <!-- Card 3 -->
+        <div id="stack-card3" class="absolute w-[90vw] max-w-3xl mx-auto h-[50vh] min-h-[300px] max-h-[600px] rounded-2xl border border-white/20 backdrop-blur-md transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] flex items-center justify-center"
+             style="background: rgba(208, 208, 208, 0.7); box-shadow: 0 10px 25px rgba(0,0,0,0.1);">
+          <span class="text-gray-600 text-3xl md:text-4xl font-medium lowercase opacity-0 transition-opacity duration-300">feature 3</span>
+        </div>
+        
+        <!-- Card 2 -->
+        <div id="stack-card2" class="absolute w-[90vw] max-w-3xl mx-auto h-[50vh] min-h-[300px] max-h-[600px] rounded-2xl border border-white/20 backdrop-blur-md transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] flex items-center justify-center"
+             style="background: rgba(224, 224, 224, 0.7); box-shadow: 0 15px 30px rgba(0,0,0,0.15);">
+          <span class="text-gray-600 text-3xl md:text-4xl font-medium lowercase opacity-0 transition-opacity duration-300">feature 2</span>
+        </div>
+        
+        <!-- Card 1 (Top) -->
+        <div id="stack-card1" class="absolute w-[90vw] max-w-3xl mx-auto h-[50vh] min-h-[300px] max-h-[600px] rounded-2xl transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] flex items-center justify-center"
+             style="background: #e44d00; box-shadow: 0 20px 40px rgba(0,0,0,0.2);">
+          <span class="text-white text-3xl md:text-4xl font-medium lowercase opacity-100 transition-opacity duration-300">feature 1</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const section = document.getElementById('card-stack-section');
+    const cards = {
+      card1: document.getElementById('stack-card1'),
+      card2: document.getElementById('stack-card2'),
+      card3: document.getElementById('stack-card3'),
+      card4: document.getElementById('stack-card4')
+    };
+    
+    let ticking = false;
+    let lastScrollY = window.scrollY;
+    let activeCardIndex = 0;
+    
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          if (!section) return;
+          
+          const sectionRect = section.getBoundingClientRect();
+          const viewportHeight = window.innerHeight;
+          const totalScrollDistance = viewportHeight * 3;
+          
+          let progress = Math.min(1, Math.max(0, Math.abs(sectionRect.top) / totalScrollDistance));
+          
+          // Determine active card
+          if (progress >= 0.75) activeCardIndex = 3;
+          else if (progress >= 0.5) activeCardIndex = 2;
+          else if (progress >= 0.25) activeCardIndex = 1;
+          else activeCardIndex = 0;
+          
+          updateCardVisibility();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+    
+    // Touch support for mobile
+    let touchStartY = 0;
+    document.addEventListener('touchstart', (e) => {
+      touchStartY = e.touches[0].clientY;
+    }, { passive: true });
+    
+    document.addEventListener('touchmove', (e) => {
+      const deltaY = touchStartY - e.touches[0].clientY;
+      lastScrollY += deltaY * 2;
+      handleScroll();
+      touchStartY = e.touches[0].clientY;
+    }, { passive: true });
+    
+    window.addEventListener('wheel', (e) => {
+      lastScrollY += e.deltaY;
+      handleScroll();
+    }, { passive: true });
+    
+    function updateCardVisibility() {
+      const cardOffset = window.innerWidth < 768 ? 25 : 40;
+      const scaleFactor = 0.03;
+      const cardColors = [
+        'rgba(224, 224, 224, 0.7)',
+        'rgba(208, 208, 208, 0.7)',
+        'rgba(180, 180, 180, 0.7)',
+        'rgba(150, 150, 150, 0.7)'
+      ];
+      
+      // Set base z-index (card1: 10, card2: 20, card3: 30, card4: 40)
+      Object.values(cards).forEach((card, index) => {
+        card.style.zIndex = (index + 1) * 10;
+        const textElement = card.querySelector('span');
+        card.style.background = cardColors[index];
+        card.style.border = '1px solid rgba(255,255,255,0.2)';
+        textElement.style.opacity = '0';
+        textElement.style.color = 'rgb(75, 85, 99)';
+      });
+      
+      // Set active card (gets highest z-index: 50)
+      const activeCard = cards[`card${activeCardIndex + 1}`];
+      const activeText = activeCard.querySelector('span');
+      activeCard.style.zIndex = '50';
+      activeCard.style.background = '#e44d00';
+      activeCard.style.border = 'none';
+      activeText.style.opacity = '1';
+      activeText.style.color = 'white';
+      
+      // Position cards based on active index
+      if (activeCardIndex === 0) {
+        cards.card1.style.transform = 'translateY(0) scale(1)';
+        cards.card2.style.transform = `translateY(${cardOffset}px) scale(${1 - scaleFactor})`;
+        cards.card3.style.transform = `translateY(${cardOffset * 2}px) scale(${1 - scaleFactor * 2})`;
+        cards.card4.style.transform = `translateY(${cardOffset * 3}px) scale(${1 - scaleFactor * 3})`;
+      } 
+      else if (activeCardIndex === 1) {
+        cards.card2.style.transform = 'translateY(0) scale(1)';
+        cards.card1.style.transform = `translateY(${-cardOffset}px) scale(${1 - scaleFactor})`;
+        cards.card3.style.transform = `translateY(${cardOffset}px) scale(${1 - scaleFactor})`;
+        cards.card4.style.transform = `translateY(${cardOffset * 2}px) scale(${1 - scaleFactor * 2})`;
+      }
+      else if (activeCardIndex === 2) {
+        cards.card3.style.transform = 'translateY(0) scale(1)';
+        cards.card2.style.transform = `translateY(${-cardOffset}px) scale(${1 - scaleFactor})`;
+        cards.card1.style.transform = `translateY(${-cardOffset * 2}px) scale(${1 - scaleFactor * 2})`;
+        cards.card4.style.transform = `translateY(${cardOffset}px) scale(${1 - scaleFactor})`;
+      }
+      else if (activeCardIndex === 3) {
+        cards.card4.style.transform = 'translateY(0) scale(1)';
+        cards.card3.style.transform = `translateY(${-cardOffset}px) scale(${1 - scaleFactor})`;
+        cards.card2.style.transform = `translateY(${-cardOffset * 2}px) scale(${1 - scaleFactor * 2})`;
+        cards.card1.style.transform = `translateY(${-cardOffset * 3}px) scale(${1 - scaleFactor * 3})`;
+      }
+    }
+    
+    // Initialize
+    setTimeout(() => {
+      updateCardVisibility();
+      Object.values(cards).forEach(card => {
+        card.style.transition = 'all 0.6s cubic-bezier(0.16, 1, 0.3, 1)';
+        card.querySelector('span').style.transition = 'opacity 0.3s ease, color 0.3s ease';
+      });
+    }, 100);
+  });
+</script>
+
+
+
+
+  <!-- Cards Section -->
 <section class="px-6 md:px-20 py-20" style="background-color: #faf9f4;">
-  <h2 class="text-center text-4xl md:text-5xl font-bold mb-12 text-black">Why axlr8?</h2>
+  <h2 class="text-4xl md:text-5xl font-bold mb-12 text-black">Why axlr8?</h2>
 
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
     <!-- Card 1 -->
