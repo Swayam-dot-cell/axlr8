@@ -35,50 +35,66 @@
 
   <!-- Navbar -->
   <nav class="fixed w-full px-6 py-4 flex justify-between items-center backdrop-blur-md bg-white/30">
-    <img src="./Artboard 20.svg" alt="axlr8 logo" class="h-10">
-    <div class="text-sm space-x-6">
+    <img src="./Artboard 20.svg" alt="axlr8 logo" class="h-14">
+    <div class="text-base space-x-8">
       <a href="#" class="text-orange-600 font-bold">Streams</a>
       <a href="#" class="text-black font-medium">Hire via axlr8</a>
     </div>
   </nav>
-
   <!-- Hero Section -->
 <section 
   class="min-h-screen flex flex-col justify-center pl-6 sm:pl-20 pr-6 bg-no-repeat bg-cover bg-center"
   style="background-image: url('/download.webp');"
 >
-  <h1 class="text-4xl sm:text-5xl font-bold leading-tight text-black max-w-3xl">
-    Where the top 1% grads<br />
+  <h1 class="text-5xl sm:text-6xl md:text-7xl font-bold leading-tight text-black max-w-5xl lg:max-w-6xl xl:max-w-7xl">
+    where the top 1% grads<br />
     meet India's next unicorn
   </h1>
   <div class="mt-8 flex flex-wrap gap-4">
-    <a href="#form" class="px-6 py-3 bg-black text-white rounded">Apply Now</a>
-    <a class="px-6 py-3 border border-black text-orange-600 bg-white rounded">Hire via axlr8</a>
+    <a href="#form" class="px-6 py-3 bg-black text-white rounded hover:border hover:border-black hover:bg-transparent hover:text-black ease-in-out duration-300">Apply Now</a>
+    <a class="px-6 py-3 border border-black text-black bg-transparent rounded hover:bg-black hover:text-white ease-in-out duration-300">Hire via axlr8</a>
   </div>
 </section>
-<!-- How we work Section -->
+
 <section class="bg-[#FAF9F4] py-20 px-6 md:px-20 text-center relative overflow-hidden" id="how-we-work">
   <!-- Heading -->
   <h2 class="text-4xl md:text-5xl font-bold mb-16">How we work</h2>
 
+  <!-- Wavy line (SVG) --
+
   <!-- 3D Pixel Sphere Models -->
   <div class="grid grid-cols-1 md:grid-cols-3 gap-10 z-10 relative mt-12">
     <div class="flex flex-col items-center space-y-4">
-      <div class="model-container w-[200px] h-[200px]"></div>
+      <div class="relative w-[200px] h-[200px]">
+        <div class="model-container w-full h-full"></div>
+        <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+          <span class="text-6xl font-bold text-white drop-shadow-lg">1</span>
+        </div>
+      </div>
       <h3 class="font-bold">Apply</h3>
       <p class="text-sm max-w-xs text-gray-800">
         Apply for the stream that resonates with your interests and experiences the most. If we like what we see, we will invite you for a 10 minutes Google Meet interview.
       </p>
     </div>
     <div class="flex flex-col items-center space-y-4">
-      <div class="model-container w-[200px] h-[200px]"></div>
+      <div class="relative w-[200px] h-[200px]">
+        <div class="model-container w-full h-full"></div>
+        <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+          <span class="text-6xl font-bold text-white drop-shadow-lg">2</span>
+        </div>
+      </div>
       <h3 class="font-bold">Pitch</h3>
       <p class="text-sm max-w-xs text-gray-800">
-        Once onboarded, you will have access to startups’ roles and be able to pitch to them, while startups can also pitch to you via pre-recorded videos.
+        Once onboarded, you will have access to startups' roles and be able to pitch to them, while startups can also pitch to you via pre-recorded videos.
       </p>
     </div>
     <div class="flex flex-col items-center space-y-4">
-      <div class="model-container w-[200px] h-[200px]"></div>
+      <div class="relative w-[200px] h-[200px]">
+        <div class="model-container w-full h-full"></div>
+        <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+          <span class="text-6xl font-bold text-white drop-shadow-lg">3</span>
+        </div>
+      </div>
       <h3 class="font-bold">Hired!</h3>
       <p class="text-sm max-w-xs text-gray-800">
         Once the feelings are mutual between you and a startup, you sign your contracts (unless the startup requires additional stages to conclude its recruitment)!
@@ -91,9 +107,210 @@
     <a href="#form" class="bg-orange-600 text-white px-6 py-3 rounded font-mono font-bold">Apply now</a>
   </div>
 </section>
-  <!-- Why Axlr8 Section -->
+<section id="card-stack-section" class="relative w-full" style="height: 600vh; background-color: #faf9f4; background-image: linear-gradient(to bottom, #faf9f4 5%, transparent 25%), linear-gradient(to top, #faf9f4 5%, transparent 25%), radial-gradient(rgba(231, 84, 2, 0.6) 1px, transparent 1px); background-repeat: no-repeat, no-repeat, repeat; background-position: top, bottom, center; background-size: 100% 100vh, 100% 100vh, 25px 25px; background-attachment: scroll, scroll, fixed;">
+  <!-- Heading -->
+  <div class="sticky top-0 h-screen w-full flex items-center justify-center">
+    <div class="container px-4 lg:px-8 mx-auto text-center flex items-center justify-center" style="height: 100vh; transform: translateY(-10%);">
+      <h2 class="text-[15vw] font-bold lowercase tracking-tight leading-[0.8]" style="color: #e75402;">our<br>streams</h2>
+    </div>
+  </div>
+  
+  <div class="sticky top-0 h-screen w-full flex items-center justify-center">
+    <div class="container px-4 lg:px-8 mx-auto h-full flex flex-col justify-center">
+      <div class="relative flex-1 flex items-center justify-center" style="perspective: 1000px;">
+        <!-- Card 4 (Bottom) -->
+        <div id="stack-card4" class="absolute w-[95vw] sm:w-[90vw] md:w-[85vw] lg:w-[80vw] xl:w-[75vw] max-w-4xl mx-auto h-[50vh] min-h-[300px] max-h-[600px] rounded-2xl border border-white/20 backdrop-blur-md transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] flex items-center justify-center">
+          <span class="text-gray-600 text-3xl md:text-4xl font-medium lowercase opacity-0 transition-opacity duration-300">feature 4</span>
+        </div>
+        
+        <!-- Card 3 -->
+        <div id="stack-card3" class="absolute w-[95vw] sm:w-[90vw] md:w-[85vw] lg:w-[80vw] xl:w-[75vw] max-w-4xl mx-auto h-[50vh] min-h-[300px] max-h-[600px] rounded-2xl border border-white/20 backdrop-blur-md transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] flex items-center justify-center">
+          <span class="text-gray-600 text-3xl md:text-4xl font-medium lowercase opacity-0 transition-opacity duration-300">feature 3</span>
+        </div>
+        
+        <!-- Card 2 -->
+        <div id="stack-card2" class="absolute w-[95vw] sm:w-[90vw] md:w-[85vw] lg:w-[80vw] xl:w-[75vw] max-w-4xl mx-auto h-[50vh] min-h-[300px] max-h-[600px] rounded-2xl border border-white/20 backdrop-blur-md transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] flex items-center justify-center">
+          <span class="text-gray-600 text-3xl md:text-4xl font-medium lowercase opacity-0 transition-opacity duration-300">feature 2</span>
+        </div>
+        
+        <!-- Card 1 (Top) -->
+        <div id="stack-card1" class="absolute w-[95vw] sm:w-[90vw] md:w-[85vw] lg:w-[80vw] xl:w-[75vw] max-w-4xl mx-auto h-[50vh] min-h-[300px] max-h-[600px] rounded-2xl transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] flex items-center justify-center">
+          <span class="text-white text-3xl md:text-4xl font-medium lowercase opacity-100 transition-opacity duration-300">feature 1</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const section = document.getElementById('card-stack-section');
+    const cards = {
+      card1: document.getElementById('stack-card1'),
+      card2: document.getElementById('stack-card2'),
+      card3: document.getElementById('stack-card3'),
+      card4: document.getElementById('stack-card4')
+    };
+    
+    // Get the features heading
+    const featuresHeading = section.querySelector('h2');
+    
+    let ticking = false;
+    let lastScrollY = window.scrollY;
+    let activeCardIndex = 0;
+    
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          if (!section) return;
+          
+          const sectionRect = section.getBoundingClientRect();
+          const viewportHeight = window.innerHeight;
+          const totalScrollDistance = viewportHeight * 5; // Total scroll distance for the section
+          
+          // Fade out heading as it scrolls out of view
+          if (featuresHeading) {
+            // Fade out completely within the first screen height of scroll
+            const headingProgress = Math.min(1, Math.abs(sectionRect.top) / viewportHeight);
+            featuresHeading.style.opacity = 1 - headingProgress;
+          }
+          
+          let progress = Math.min(1, Math.max(0, Math.abs(sectionRect.top) / totalScrollDistance));
+          
+          // Card transitions start after heading fades
+          let cardProgress = Math.max(0, (progress - 0.2) / 0.8);
+          cardProgress = Math.min(1, cardProgress);
+          
+          // Determine active card - viewport stays fixed until feature 4
+          if (cardProgress >= 0.75) activeCardIndex = 3; // Feature 4 - viewport stays here
+          else if (cardProgress >= 0.5) activeCardIndex = 2;
+          else if (cardProgress >= 0.25) activeCardIndex = 1;
+          else activeCardIndex = 0;
+          
+          updateCardVisibility();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+    
+    // Touch support for mobile
+    let touchStartY = 0;
+    document.addEventListener('touchstart', (e) => {
+      touchStartY = e.touches[0].clientY;
+    }, { passive: true });
+    
+    document.addEventListener('touchmove', (e) => {
+      const deltaY = touchStartY - e.touches[0].clientY;
+      lastScrollY += deltaY * 2;
+      handleScroll();
+      touchStartY = e.touches[0].clientY;
+    }, { passive: true });
+    
+    window.addEventListener('wheel', (e) => {
+      lastScrollY += e.deltaY;
+      handleScroll();
+    }, { passive: true });
+    
+    function updateCardVisibility() {
+      const cardOffset = window.innerWidth < 768 ? 25 : 40;
+      const scaleFactor = 0.03;
+      const glassmorphicColors = [
+        'rgba(251, 146, 60, 0.8)',   // Light orange-400
+        'rgba(249, 115, 22, 0.7)',   // Light orange-500
+        'rgba(234, 88, 12, 0.6)',    // Light orange-600
+        'rgba(194, 65, 12, 0.5)'     // Light orange-700
+      ];
+      
+      // Set base z-index (card1: 10, card2: 20, card3: 30, card4: 40)
+      Object.values(cards).forEach((card, index) => {
+        card.style.zIndex = (index + 1) * 10;
+        const textElement = card.querySelector('span');
+        card.style.background = glassmorphicColors[index];
+        card.style.border = '1px solid rgba(255,255,255,0.2)';
+        card.style.backdropFilter = 'blur(10px)';
+        textElement.style.opacity = '0';
+        textElement.style.color = 'rgb(75, 85, 99)';
+        // Reset opacity for all cards
+        card.style.opacity = '1';
+      });
+      
+      // Set active card (gets highest z-index: 50)
+      const activeCard = cards[`card${activeCardIndex + 1}`];
+      const activeText = activeCard.querySelector('span');
+      activeCard.style.zIndex = '50';
+      activeCard.style.background = '#e75402';
+      activeCard.style.border = 'none';
+      activeCard.style.backdropFilter = 'none';
+      activeText.style.opacity = '1';
+      activeText.style.color = 'white';
+      
+      // Position cards based on active index - stack from one side only
+      if (activeCardIndex === 0) {
+        // When feature 1 is active, stack all cards underneath with decreasing opacity
+        cards.card1.style.transform = 'translateY(0) scale(1)';
+        cards.card1.style.opacity = '1';
+        
+        cards.card2.style.transform = `translateY(${cardOffset}px) scale(${1 - scaleFactor})`;
+        cards.card2.style.opacity = '0.7';
+        
+        cards.card3.style.transform = `translateY(${cardOffset * 2}px) scale(${1 - scaleFactor * 2})`;
+        cards.card3.style.opacity = '0.4';
+        
+        cards.card4.style.transform = `translateY(${cardOffset * 3}px) scale(${1 - scaleFactor * 3})`;
+        cards.card4.style.opacity = '0.1';
+      } 
+      else if (activeCardIndex === 1) {
+        cards.card2.style.transform = 'translateY(0) scale(1)';
+        cards.card2.style.opacity = '1';
+        cards.card1.style.transform = `translateY(${-cardOffset}px) scale(${1 - scaleFactor})`;
+        cards.card1.style.opacity = '0.7';
+        cards.card3.style.transform = `translateY(${cardOffset}px) scale(${1 - scaleFactor})`;
+        cards.card3.style.opacity = '0.4';
+        cards.card4.style.transform = `translateY(${cardOffset * 2}px) scale(${1 - scaleFactor * 2})`;
+        cards.card4.style.opacity = '0.1';
+      }
+      else if (activeCardIndex === 2) {
+        cards.card3.style.transform = 'translateY(0) scale(1)';
+        cards.card3.style.opacity = '1';
+        cards.card2.style.transform = `translateY(${-cardOffset}px) scale(${1 - scaleFactor})`;
+        cards.card2.style.opacity = '0.7';
+        cards.card1.style.transform = `translateY(${-cardOffset * 2}px) scale(${1 - scaleFactor * 2})`;
+        cards.card1.style.opacity = '0.4';
+        cards.card4.style.transform = `translateY(${cardOffset}px) scale(${1 - scaleFactor})`;
+        cards.card4.style.opacity = '0.1';
+      }
+      else if (activeCardIndex === 3) {
+        cards.card4.style.transform = 'translateY(0) scale(1)';
+        cards.card4.style.opacity = '1';
+        cards.card3.style.transform = `translateY(${-cardOffset}px) scale(${1 - scaleFactor})`;
+        cards.card3.style.opacity = '0.7';
+        cards.card2.style.transform = `translateY(${-cardOffset * 2}px) scale(${1 - scaleFactor * 2})`;
+        cards.card2.style.opacity = '0.4';
+        cards.card1.style.transform = `translateY(${-cardOffset * 3}px) scale(${1 - scaleFactor * 3})`;
+        cards.card1.style.opacity = '0.1';
+      }
+    }
+    
+    // Initialize
+    setTimeout(() => {
+      updateCardVisibility();
+      Object.values(cards).forEach(card => {
+        card.style.transition = 'all 0.6s cubic-bezier(0.16, 1, 0.3, 1)';
+        card.querySelector('span').style.transition = 'opacity 0.3s ease, color 0.3s ease';
+      });
+    }, 100);
+  });
+</script>
+
+
+
+
+  <!-- Cards Section -->
 <section class="px-6 md:px-20 py-20" style="background-color: #faf9f4;">
-  <h2 class="text-center text-4xl md:text-5xl font-bold mb-12 text-black">Why axlr8?</h2>
+  <h2 class="text-4xl md:text-5xl font-bold mb-12 text-black">Why axlr8?</h2>
 
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
     <!-- Card 1 -->
@@ -204,7 +421,7 @@
   const containers = document.querySelectorAll('.model-container');
   const models = [];
 
-  containers.forEach(container => {
+  containers.forEach((container, index) => {
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
     camera.position.z = 40;
@@ -244,7 +461,22 @@
 
     scene.add(group);
 
-    const model = { container, scene, camera, renderer, group, hoverX: 0, hoverY: 0, isHovering: false };
+    // Get the text overlay element
+    const textOverlay = container.parentElement.querySelector('span');
+    
+    const model = { 
+      container, 
+      scene, 
+      camera, 
+      renderer, 
+      group, 
+      hoverX: 0, 
+      hoverY: 0, 
+      isHovering: false,
+      textOverlay,
+      targetRotationX: 0,
+      targetRotationY: 0
+    };
     models.push(model);
 
     container.addEventListener('mousemove', (e) => {
@@ -267,9 +499,27 @@
       if (model.isHovering) {
         model.group.rotation.x += (model.hoverX - model.group.rotation.x) * 0.1;
         model.group.rotation.y += (model.hoverY - model.group.rotation.y) * 0.1;
+        
+        // Move text overlay with sphere rotation - attached to top plane
+        const radius = 100; // Virtual radius for text movement
+        const textX = Math.sin(model.group.rotation.y) * radius * 0.3;
+        const textY = Math.sin(model.group.rotation.x) * radius * 0.3;
+        
+        // Add 3D warping effect to simulate curvature on sphere surface
+        const rotateX = model.group.rotation.x * 0.5; // Tilt effect
+        const rotateY = model.group.rotation.y * 0.5; // Tilt effect
+        const scaleX = 1 + Math.abs(Math.sin(model.group.rotation.y)) * 0.2; // Stretch effect
+        const scaleY = 1 + Math.abs(Math.sin(model.group.rotation.x)) * 0.2; // Stretch effect
+        
+        model.textOverlay.style.transform = `translate(${textX}px, ${textY}px) rotateX(${rotateX}rad) rotateY(${rotateY}rad) scale(${scaleX}, ${scaleY})`;
+        model.textOverlay.style.transition = 'transform 0.1s ease-out';
       } else {
         model.group.rotation.x *= 0.95;
         model.group.rotation.y *= 0.95;
+        
+        // Reset text position when not hovering
+        model.textOverlay.style.transform = 'translate(0px, 0px) rotateX(0rad) rotateY(0rad) scale(1, 1)';
+        model.textOverlay.style.transition = 'transform 0.3s ease-out';
       }
       model.renderer.render(model.scene, model.camera);
     });
@@ -283,32 +533,6 @@
       model.camera.updateProjectionMatrix();
       model.renderer.setSize(model.container.clientWidth, model.container.clientHeight);
     });
-  });
-
-  window.addEventListener('resize', () => {
-    models.forEach(model => {
-      model.camera.aspect = model.container.clientWidth / model.container.clientHeight;
-      model.camera.updateProjectionMatrix();
-      model.renderer.setSize(model.container.clientWidth, model.container.clientHeight);
-    });
-  });
-
-  // Draw numbers on canvas
-  labelTexts.forEach((text, i) => {
-    const canvas = document.getElementById(`label${i + 1}`);
-    const ctx = canvas.getContext('2d');
-    const drawText = () => {
-      canvas.width = canvas.offsetWidth;
-      canvas.height = canvas.offsetHeight;
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      ctx.font = 'bold 80px Space Mono';
-      ctx.fillStyle = 'white';
-      ctx.textAlign = 'center';
-      ctx.textBaseline = 'middle';
-      ctx.fillText(text, canvas.width / 2, canvas.height / 2);
-    };
-    drawText();
-    window.addEventListener('resize', drawText);
   });
 </script>
 
