@@ -34,17 +34,17 @@
 <body class="text-black">
 
   <!-- Navbar -->
-  <nav class="fixed w-full px-6 py-4 flex justify-between items-center backdrop-blur-md bg-white/30">
-    <img src="./Artboard 20.svg" alt="axlr8 logo" class="h-14">
+  <nav class="fixed w-full px-6 py-2 flex justify-between items-center backdrop-blur-md bg-white/30">
+    <a href="index.html"><img src="./Artboard 201.png" alt="axlr8 logo" class="p-2 h-14"></a>
     <div class="text-base space-x-8">
-      <a href="#" class="text-orange-600 font-bold">Streams</a>
-      <a href="#" class="text-black font-medium">Hire via axlr8</a>
+      <a href="#card-stack-section" class="text-orange-600 font-bold">streams</a>
+      <a href="forms.html" class="text-black font-medium">hire via axlr8</a>
     </div>
   </nav>
   <!-- Hero Section -->
 <section 
   class="min-h-screen flex flex-col justify-center pl-6 sm:pl-20 pr-6 bg-no-repeat bg-cover bg-center"
-  style="background-image: url('/download.webp');"
+  style="background-image: url('download.webp');"
 >
   <h1 class="text-5xl sm:text-6xl md:text-7xl font-bold leading-tight text-black max-w-5xl lg:max-w-6xl xl:max-w-7xl">
     where the top 1% grads<br />
@@ -55,12 +55,55 @@
     <a class="px-6 py-3 border border-black text-black bg-transparent rounded hover:bg-black hover:text-white ease-in-out duration-300">Hire via axlr8</a>
   </div>
 </section>
+<!-- Our Promise Section -->
+<section id="promise-timeline" class="relative py-20 px-6 md:px-20" style="background-color: #faf9f4;">
+  <!-- Center Line -->
+  <div class="absolute top-0 left-1/2 w-1 h-full bg-gray-300 -translate-x-1/2 hidden md:block" style="z-index: 1;">
+    <div id="timeline-progress" class="w-full bg-orange-600" style="height: 0%;"></div>
+  </div>
+  
+  <!-- Emoji -->
+  <div id="timeline-emoji" class="absolute left-1/2 text-4xl hidden md:block" style="transform: translate(-50%, -50%); top: 0px; z-index: 2;">
+    <img src="handshake.png" alt="Handshake" class="w-16 h-16">
+  </div>
 
+  <div class="container mx-auto space-y-16 lg:space-y-24">
+    <!-- Item 1: Our Promise -->
+    <div class="timeline-item relative grid grid-cols-1 lg:grid-cols-10 items-center">
+      <div class="timeline-card bg-orange-600 text-white p-8 rounded-2xl shadow-lg lg:col-span-4 lg:col-start-7">
+        <h3 class="text-3xl font-bold lowercase">our promise</h3>
+        <p class="mt-4 text-lg">
+          We evaluate talent not just on performance but on potential, factoring in social mobility indicators like education gaps, hometown data, and access to opportunity.
+        </p>
+      </div>
+    </div>
+    
+    <!-- Item 2: Custom AI Tool -->
+    <div class="timeline-item relative grid grid-cols-1 lg:grid-cols-10 items-center">
+      <div class="timeline-card bg-black text-white p-8 rounded-2xl shadow-lg lg:col-span-4 lg:col-start-1">
+        <h3 class="text-3xl font-bold lowercase text-orange-600">custom ai tool</h3>
+        <p class="mt-4 text-lg">
+          Built on OpenAI's API, we've developed a bespoke AI-powered CV analysis tool that uses a unique scoring rubric to benchmark candidates against the top 1% of graduates whilst factoring in social mobility indicators.
+        </p>
+      </div>
+    </div>
+
+    <!-- Item 3: Manual Screening -->
+    <div class="timeline-item relative grid grid-cols-1 lg:grid-cols-10 items-center">
+      <div class="timeline-card bg-black text-white p-8 rounded-2xl shadow-lg lg:col-span-4 lg:col-start-7">
+        <h3 class="text-3xl font-bold lowercase text-orange-600">manual screening</h3>
+        <p class="mt-4 text-lg">
+          Once an applicant clears our AI screening, their full application is reviewed holistically before they're invited to a 10-minute case study interview.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
 <section class="bg-[#FAF9F4] py-20 px-6 md:px-20 text-center relative overflow-hidden" id="how-we-work">
   <!-- Heading -->
   <h2 class="text-4xl md:text-5xl font-bold mb-16">How we work</h2>
 
-  <!-- Wavy line (SVG) --
+  <!-- Wavy line (SVG) -->
 
   <!-- 3D Pixel Sphere Models -->
   <div class="grid grid-cols-1 md:grid-cols-3 gap-10 z-10 relative mt-12">
@@ -104,7 +147,7 @@
 
   <!-- Apply Now button -->
   <div class="mt-12">
-    <a href="#form" class="bg-orange-600 text-white px-6 py-3 rounded font-mono font-bold">Apply now</a>
+    <a href="form" class="bg-orange-600 text-white px-6 py-3 rounded font-mono font-bold">Apply now</a>
   </div>
 </section>
 <section id="card-stack-section" class="relative w-full" style="height: 600vh; background-color: #faf9f4; background-image: linear-gradient(to bottom, #faf9f4 5%, transparent 25%), linear-gradient(to top, #faf9f4 5%, transparent 25%), radial-gradient(rgba(231, 84, 2, 0.6) 1px, transparent 1px); background-repeat: no-repeat, no-repeat, repeat; background-position: top, bottom, center; background-size: 100% 100vh, 100% 100vh, 25px 25px; background-attachment: scroll, scroll, fixed;">
@@ -119,23 +162,35 @@
     <div class="container px-4 lg:px-8 mx-auto h-full flex flex-col justify-center">
       <div class="relative flex-1 flex items-center justify-center" style="perspective: 1000px;">
         <!-- Card 4 (Bottom) -->
-        <div id="stack-card4" class="absolute w-[95vw] sm:w-[90vw] md:w-[85vw] lg:w-[80vw] xl:w-[75vw] max-w-4xl mx-auto h-[50vh] min-h-[300px] max-h-[600px] rounded-2xl border border-white/20 backdrop-blur-md transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] flex items-center justify-center">
-          <span class="text-gray-600 text-3xl md:text-4xl font-medium lowercase opacity-0 transition-opacity duration-300">feature 4</span>
+        <div id="stack-card4" class="absolute w-[95vw] sm:w-[90vw] md:w-[85vw] lg:w-[80vw] xl:w-[75vw] max-w-4xl mx-auto h-[50vh] min-h-[300px] max-h-[600px] rounded-2xl border border-white/20 backdrop-blur-md transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] flex items-center justify-center p-8 text-center">
+          <span class="flex flex-col items-center w-full">
+            <span class="font-extrabold uppercase tracking-wide text-4xl md:text-5xl mb-4 text-white">DABBLER</span>
+            <span class='block text-base md:text-lg font-normal text-white'>Common roles: Founder's Associate, Operations Executive, Commercial Associate, Analyst<br>Ideal background: proactive graduate, or ~1-3 years of corporate or startup experience.</span>
+          </span>
         </div>
         
         <!-- Card 3 -->
-        <div id="stack-card3" class="absolute w-[95vw] sm:w-[90vw] md:w-[85vw] lg:w-[80vw] xl:w-[75vw] max-w-4xl mx-auto h-[50vh] min-h-[300px] max-h-[600px] rounded-2xl border border-white/20 backdrop-blur-md transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] flex items-center justify-center">
-          <span class="text-gray-600 text-3xl md:text-4xl font-medium lowercase opacity-0 transition-opacity duration-300">feature 3</span>
+        <div id="stack-card3" class="absolute w-[95vw] sm:w-[90vw] md:w-[85vw] lg:w-[80vw] xl:w-[75vw] max-w-4xl mx-auto h-[50vh] min-h-[300px] max-h-[600px] rounded-2xl border border-white/20 backdrop-blur-md transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] flex items-center justify-center p-8 text-center">
+          <span class="flex flex-col items-center w-full">
+            <span class="font-extrabold uppercase tracking-wide text-4xl md:text-5xl mb-4 text-white">Sales</span>
+            <span class='block text-base md:text-lg font-normal text-white'>Common roles: Sales Development Representative, Account Executive, Business Development Exec, Sales Exec, Commercial Associate<br>Ideal background: proactive graduate, &gt;6 months in customer-facing roles, demonstrable competence in sales.</span>
+          </span>
         </div>
         
         <!-- Card 2 -->
-        <div id="stack-card2" class="absolute w-[95vw] sm:w-[90vw] md:w-[85vw] lg:w-[80vw] xl:w-[75vw] max-w-4xl mx-auto h-[50vh] min-h-[300px] max-h-[600px] rounded-2xl border border-white/20 backdrop-blur-md transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] flex items-center justify-center">
-          <span class="text-gray-600 text-3xl md:text-4xl font-medium lowercase opacity-0 transition-opacity duration-300">feature 2</span>
+        <div id="stack-card2" class="absolute w-[95vw] sm:w-[90vw] md:w-[85vw] lg:w-[80vw] xl:w-[75vw] max-w-4xl mx-auto h-[50vh] min-h-[300px] max-h-[600px] rounded-2xl border border-white/20 backdrop-blur-md transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] flex items-center justify-center p-8 text-center">
+          <span class="flex flex-col items-center w-full">
+            <span class="font-extrabold uppercase tracking-wide text-4xl md:text-5xl mb-4 text-white">Marketing</span>
+            <span class='block text-base md:text-lg font-normal text-white'>Common roles: Marketing Associate, Growth Associate, Content Marketer, Social Media Executive<br>Ideal background: proactive graduate, &gt;6 months in corporate or startup experience, demonstrable experience in implementing campaigns/GTM strategies.</span>
+          </span>
         </div>
         
         <!-- Card 1 (Top) -->
-        <div id="stack-card1" class="absolute w-[95vw] sm:w-[90vw] md:w-[85vw] lg:w-[80vw] xl:w-[75vw] max-w-4xl mx-auto h-[50vh] min-h-[300px] max-h-[600px] rounded-2xl transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] flex items-center justify-center">
-          <span class="text-white text-3xl md:text-4xl font-medium lowercase opacity-100 transition-opacity duration-300">feature 1</span>
+        <div id="stack-card1" class="absolute w-[95vw] sm:w-[90vw] md:w-[85vw] lg:w-[80vw] xl:w-[75vw] max-w-4xl mx-auto h-[50vh] min-h-[300px] max-h-[600px] rounded-2xl transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] flex items-center justify-center p-8 text-center">
+          <span class="flex flex-col items-center w-full">
+            <span class="font-extrabold uppercase tracking-wide text-4xl md:text-5xl mb-4 text-white">Software engineering</span>
+            <span class='block text-base md:text-lg font-normal text-white'>Common roles: Full-stack engineers<br>Ideal background: proactive graduate, junior (1-2 yrs exp) or mid-level (3+ yrs exp) full-stack engineers with experience in startups or scaleups.</span>
+          </span>
         </div>
       </div>
     </div>
@@ -305,48 +360,107 @@
   });
 </script>
 
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const timelineSection = document.getElementById('promise-timeline');
+  if (!timelineSection) return;
 
+  const progress = document.getElementById('timeline-progress');
+  const emoji = document.getElementById('timeline-emoji');
+  const timelineItems = timelineSection.querySelectorAll('.timeline-item');
+  const cards = timelineSection.querySelectorAll('.timeline-card');
 
+  const handleScroll = () => {
+    const rect = timelineSection.getBoundingClientRect();
+    const sectionHeight = timelineSection.offsetHeight;
+    const viewportHeight = window.innerHeight;
+
+    // Calculate how much of the section is visible
+    // Starts when top of section hits viewport center, ends when bottom hits center
+    let scrollPercent = (viewportHeight / 2 - rect.top) / sectionHeight;
+    scrollPercent = Math.max(0, Math.min(1, scrollPercent));
+
+    // Update progress bar height and emoji position
+    const totalHeight = timelineSection.clientHeight;
+    progress.style.height = `${scrollPercent * 100}%`;
+    emoji.style.top = `${scrollPercent * totalHeight}px`;
+
+    // Highlight the active card
+    let activeIndex = -1;
+    let minDistance = Infinity;
+
+    timelineItems.forEach((item, index) => {
+      const itemRect = item.getBoundingClientRect();
+      const itemCenterY = itemRect.top + itemRect.height / 2;
+      const distance = Math.abs(itemCenterY - (viewportHeight / 2));
+
+      if (distance < minDistance) {
+        minDistance = distance;
+        activeIndex = index;
+      }
+    });
+
+    cards.forEach((card, index) => {
+      if (index === activeIndex) {
+        card.style.transform = 'scale(1.1)';
+        card.style.opacity = '1';
+        card.style.boxShadow = '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)';
+      } else {
+        card.style.transform = 'scale(1)';
+        card.style.opacity = '0.7';
+        card.style.boxShadow = '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)';
+      }
+    });
+  };
+
+  cards.forEach(card => {
+    card.style.transition = 'transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease, box-shadow 0.4s ease';
+  });
+
+  window.addEventListener('scroll', handleScroll, { passive: true });
+  handleScroll();
+});
+</script>
 
   <!-- Cards Section -->
-<section class="px-6 md:px-20 py-20" style="background-color: #faf9f4;">
-  <h2 class="text-4xl md:text-5xl font-bold mb-12 text-black">Why axlr8?</h2>
+<section class="px-6 md:px-20 py-20 text-center" style="background-color: #faf9f4;">
+  <h2 class="text-4xl md:text-5xl font-bold mb-12 text-black">why axlr8</h2>
 
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
     <!-- Card 1 -->
     <div class="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition">
-      <h3 class="font-bold mb-1">Adaptive Learning</h3>
-      <p class="text-sm text-gray-600">Axlr8 learns from your interactions, continuously improving to better serve your needs.</p>
+      <h3 class="font-bold mb-1">VC-backed startup partners</h3>
+      <p class="text-sm text-gray-600">Work directly with startups backed by top-tier VCs — think Sequoia, Accel, Y Combinator and beyond.</p>
     </div>
 
     <!-- Card 2 -->
     <div class="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition">
-      <h3 class="font-bold mb-1">Natural Interaction</h3>
-      <p class="text-sm text-gray-600">Communicate using natural language and gestures. Axlr8 understands context and responds appropriately.</p>
+      <h3 class="font-bold mb-1">Startups pitch to you</h3>
+      <p class="text-sm text-gray-600">Flip the script as founders pitch roles to you as well.</p>
     </div>
 
     <!-- Card 3 -->
     <div class="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition">
-      <h3 class="font-bold mb-1">Precise Movement</h3>
-      <p class="text-sm text-gray-600">Advanced motion enables fluid, human-like movements with excellent control.</p>
+      <h3 class="font-bold mb-1">Access to unadvertised roles</h3>
+      <p class="text-sm text-gray-600">Get early access to high-impact roles that aren't posted on job boards.</p>
     </div>
 
     <!-- Card 4 -->
     <div class="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition">
-      <h3 class="font-bold mb-1">Spatial Awareness</h3>
-      <p class="text-sm text-gray-600">Sensors and mapping tech help axlr8 understand complex surroundings with ease.</p>
+      <h3 class="font-bold mb-1">Opportunity to receive equity</h3>
+      <p class="text-sm text-gray-600">Don't just work for a company — own a piece of its upside.</p>
     </div>
 
     <!-- Card 5 -->
     <div class="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition">
-      <h3 class="font-bold mb-1">Enhanced Security</h3>
-      <p class="text-sm text-gray-600">Built-in protocols protect your data while ensuring safe operation.</p>
+      <h3 class="font-bold mb-1">Access to a diverse range of industries</h3>
+      <p class="text-sm text-gray-600">From fintech to femtech, explore roles across the startup spectrum.</p>
     </div>
 
     <!-- Card 6 -->
     <div class="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition">
-      <h3 class="font-bold mb-1">Task Assistance</h3>
-      <p class="text-sm text-gray-600">From simple reminders to complex tasks, Axlr8 assists across a wide range of activities.</p>
+      <h3 class="font-bold mb-1">Escape the corporate ladder</h3>
+      <p class="text-sm text-gray-600">Ditch the slow climb — make real impact from day one in fast-growing startups.</p>
     </div>
   </div>
 </section>
@@ -379,18 +493,17 @@
 
     <!-- Social Icons -->
     <div class="flex justify-center gap-6 text-2xl">
-      <a href="#" aria-label="LinkedIn"><svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+      <a href="https://www.linkedin.com/company/axlr8-in/" aria-label="LinkedIn"><svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
   <path fill-rule="evenodd" d="M12.51 8.796v1.697a3.738 3.738 0 0 1 3.288-1.684c3.455 0 4.202 2.16 4.202 4.97V19.5h-3.2v-5.072c0-1.21-.244-2.766-2.128-2.766-1.827 0-2.139 1.317-2.139 2.676V19.5h-3.19V8.796h3.168ZM7.2 6.106a1.61 1.61 0 0 1-.988 1.483 1.595 1.595 0 0 1-1.743-.348A1.607 1.607 0 0 1 5.6 4.5a1.601 1.601 0 0 1 1.6 1.606Z" clip-rule="evenodd"/>
   <path d="M7.2 8.809H4V19.5h3.2V8.809Z"/>
 </svg>
 </a>
-      <a href="#" aria-label="Instagram"><svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+      <a href="https://www.instagram.com/axlr8_in" aria-label="Instagram"><svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
   <path fill="currentColor" fill-rule="evenodd" d="M3 8a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8Zm5-3a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3V8a3 3 0 0 0-3-3H8Zm7.597 2.214a1 1 0 0 1 1-1h.01a1 1 0 1 1 0 2h-.01a1 1 0 0 1-1-1ZM12 9a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm-5 3a5 5 0 1 1 10 0 5 5 0 0 1-10 0Z" clip-rule="evenodd"/>
 </svg>
 </a>
-      <a href="#" aria-label="TikTok"><svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-  <path fill-rule="evenodd" d="M13.135 6H15V3h-1.865a4.147 4.147 0 0 0-4.142 4.142V9H7v3h2v9.938h3V12h2.021l.592-3H12V6.591A.6.6 0 0 1 12.592 6h.543Z" clip-rule="evenodd"/>
-</svg></a>
+      <a href="https://x.com/axlr8_in" aria-label="X"><svg class="w-6 h-6 text-gray-800 dark:text-white" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
+</a>
     </div>
 
     <!-- Huge Logo -->
