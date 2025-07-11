@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>axlr8</title>
+  <link rel="icon" type="image/x-icon" href="Artboard 1.svg">
+  <!-- Font & Tailwind -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Space Mono', monospace;
+    }
+    button, .btn, a[href], input[type="submit"], input[type="button"] {
+      font-family: 'Space Mono', monospace;
+    }
+    #card-stack-section span {
+      font-family: 'Space Mono', monospace;
+    }
+    footer {
+      font-family: 'Space Mono', monospace;
+    }
+    .reveal {
+      opacity: 0;
+      transform: translateY(50px);
+      transition: all 1s ease;
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    html {  
+      scroll-behavior: smooth;  
+    }
+    body{
+      background-color: #faf9f4 /* Fallback color */
+    }
+  </style>
+</head>
+
+<body class="text-black">
+
+  <!-- Navbar -->
+  <nav class="fixed w-full px-6 py-2 flex justify-between items-center backdrop-blur-md bg-white/30">
+    <a href="index.html"><img src="./Artboard 201.png" alt="axlr8 logo" class="p-2 h-14"></a>
+    <div class="text-base space-x-8">
+      <a href="#card-stack-section" class="text-orange-600 font-bold">streams</a>
+      <a href="forms.html" class="text-black font-medium">hire via axlr8</a>
+    </div>
+  </nav>
+  <!-- Campus Champion Program Section -->
+  <section class="pt-[120px] pb-12 px-4 md:px-20" style="background-color: #faf9f4;">
+    <h1 class="text-5xl md:text-6xl font-bold mb-4 text-black text-center" style="font-family: 'Space Mono', monospace;">axlr8 Campus Champion Program</h1>
+    <p class="text-orange-600 text-center text-3xl font-semibold md:text-3xl max-w-3xl mx-auto my-16">Lead your campus into the future of startups. Empower your peers to break free from boring careers, host founder AMAs, share hidden startup opportunities, and build a community of top 1% talent — all while getting rewarded like a boss.</p>
+    <div class="p-8 md:p-16 max-w-7xl mx-auto mb-10">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+        <!-- Card 1 -->
+        <div class="flex flex-col items-center p-10 rounded-xl transition transform hover:scale-105 hover:shadow-xl shadow-md bg-white">
+          <img src="t (1).webp" alt="Be the startup voice" class="w-40 h-40 mb-8">
+          <p class="font-mono text-center text-black font-semibold text-xl">be the startup voice of your campus</p>
+  </div>
+        <!-- Card 2 -->
+        <div class="flex flex-col items-center p-10 rounded-xl transition transform hover:scale-105 hover:shadow-xl shadow-md bg-white">
+          <img src="t.webp" alt="Build your personal brand" class="w-40 h-40 mb-8">
+          <p class="font-mono text-center text-black font-semibold text-xl">build your personal brand by putting your campus on the startup map</p>
+        </div>
+        <!-- Card 3 -->
+        <div class="flex flex-col items-center p-10 rounded-xl transition transform hover:scale-105 hover:shadow-xl shadow-md bg-white">
+          <img src="ok.webp" alt="Win rewards" class="w-40 h-40 mb-8">
+          <p class="font-mono text-center text-black font-semibold text-xl">Win rewards that slap — from oosh drops to 1:1 mentorships</p>
+        </div>
+      </div>
+      <div class="flex justify-center mt-10">
+        <a href="#form" class="bg-orange-600 text-white px-8 py-3 rounded font-mono font-bold text-lg shadow hover:bg-orange-700 transition">apply now</a>
+      </div>
+    </div>
+    <p class="text-center text-black max-w-3xl mx-auto text-xl md:text-3xl">A selective program for driven, high-performing students to become startup career enablers on campus. You spread the word, refer your smartest friends, and help your batch get hired by YC-backed and breakout startups — while earning rewards, mentorship, and recognition along the way.</p>
+</section>
+  <!-- Rewards Timeline Section -->
+  <section id="promise-timeline" class="relative min-h-screen flex items-center justify-center py-16">
+    <!-- Vertical Timeline -->
+    <div class="absolute left-1/2 top-0 h-full w-1 bg-gray-200 -translate-x-1/2 z-0"></div>
+    <div id="progress-bar" class="absolute left-1/2 top-0 w-1 bg-orange-500 -translate-x-1/2 z-10 transition-all duration-300" style="height: 0;"></div>
+    <!-- Timeline Cards -->
+    <div class="relative z-20 w-full max-w-5xl flex flex-col items-center gap-32">
+      <!-- LEADER Card -->
+      <div id="card-leader" class="timeline-card bg-white rounded-xl shadow p-10 w-full max-w-lg transition-all duration-300">
+        <h3 class="text-5xl font-bold uppercase text-orange-600 mb-4">LEADER</h3>
+        <p class="mb-3 font-semibold text-lg">Eligibility: 5+ hires through your referrals</p>
+        <div class="font-bold mb-2 text-lg">Perks:</div>
+        <ul class="list-disc list-inside text-gray-700 text-lg space-y-2">
+          <li>₹2,500 cash reward</li>
+          <li>Certificate + digital badge</li>
+          <li>Access to axlr8's curated startup career toolkit</li>
+          <li>Early access to future axlr8 events & partnerships</li>
+        </ul>
+    </div>
+      <!-- HERO Card -->
+      <div id="card-hero" class="timeline-card bg-white rounded-xl shadow p-10 w-full max-w-lg transition-all duration-300">
+        <h3 class="text-5xl font-bold uppercase text-orange-600 mb-4">HERO</h3>
+        <p class="mb-3 font-semibold text-lg">Eligibility: 10+ hires through your referrals</p>
+        <div class="font-bold mb-2 text-lg">Perks:</div>
+        <ul class="list-disc list-inside text-gray-700 text-lg space-y-2">
+          <li>₹5,000 cash reward</li>
+          <li>Featured in axlr8 email and IG post</li>
+          <li>Certificate + digital badge</li>
+          <li>Group AMA with a top founder or operator</li>
+          <li>Priority access to beta features / invite-only founder events</li>
+        </ul>
+  </div>
+      <!-- CHAMPION Card -->
+      <div id="card-champion" class="timeline-card bg-white rounded-xl shadow p-10 w-full max-w-lg transition-all duration-300">
+        <h3 class="text-5xl font-bold uppercase text-orange-600 mb-4">CHAMPION</h3>
+        <p class="mb-3 font-semibold text-lg">Eligibility: 15+ hires through your referrals</p>
+        <div class="font-bold mb-2 text-lg">Perks:</div>
+        <ul class="list-disc list-inside text-gray-700 text-lg space-y-2">
+          <li>₹10,000 cash reward</li>
+          <li>Exclusive shoutout on axlr8 socials</li>
+          <li>Certificate + digital badge + priority LOR from axlr8 founder</li>
+          <li>1:1 mentoring call with a startup founder/VC</li>
+          <li>Priority access to axlr8 internal talent roles or paid internships</li>
+        </ul>
+      </div>
+    </div>
+    <style>
+      .timeline-card.active {
+        box-shadow: 0 10px 40px 0 rgba(255, 115, 0, 0.25), 0 2px 8px 0 rgba(0,0,0,0.10);
+        transform: scale(1.05);
+        border: 2px solid #fb923c;
+        background: #fff7ed;
+      }
+    </style>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+      const cards = [
+        document.getElementById('card-leader'),
+        document.getElementById('card-hero'),
+        document.getElementById('card-champion')
+      ];
+      const progressBar = document.getElementById('progress-bar');
+      const timeline = document.getElementById('promise-timeline');
+
+      function updateProgress() {
+        const timelineRect = timeline.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+        const scrollY = window.scrollY || window.pageYOffset;
+        const timelineTop = timeline.offsetTop;
+        const timelineHeight = timeline.offsetHeight;
+    
+        // Calculate scroll progress within the timeline section
+        let progress = (scrollY + windowHeight/2 - timelineTop) / timelineHeight;
+        progress = Math.max(0, Math.min(1, progress));
+        progressBar.style.height = `${progress * 100}%`;
+
+        // Highlight cards using Intersection Observer logic
+        cards.forEach(card => card.classList.remove('active'));
+        cards.forEach(card => {
+          const rect = card.getBoundingClientRect();
+          const cardMiddle = rect.top + rect.height/2;
+          if (cardMiddle > windowHeight/2 - 100 && cardMiddle < windowHeight/2 + 100) {
+            card.classList.add('active');
+      }
+    });
+      }
+
+      window.addEventListener('scroll', updateProgress, { passive: true });
+      window.addEventListener('resize', updateProgress);
+      updateProgress();
+});
+</script>
+  </section>
+  <!-- How to Become a axlr8 champion Section -->
+  <section class="py-12 md:px-20 bg-[#faf9f4] px-4 mx-auto">
+    <h2 class="text-4xl md:text-6xl font-bold text-center mb-6" style="font-family: 'Space Mono', monospace;">becoming an axlr8 champion</h2>
+    <div class="flex justify-center px-12 md:px-20">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
+        <div class="flex flex-col items-center justify-center min-h-3xl bg-white border-2 border-orange-200 rounded-xl p-6">
+          <span class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-orange-100 text-orange-600 font-bold text-3xl mb-4">✓</span>
+          <span class="text-black font-medium text-center text-3xl md:text-3xl">Strong following (5k+ followers/engagement)</span>
+        </div>
+        <div class="flex flex-col items-center justify-center min-h-3xl bg-white border-2 border-orange-200 rounded-xl p-6">
+          <span class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-orange-100 text-orange-600 font-bold text-3xl mb-4">✓</span>
+          <span class="text-black font-medium text-center text-3xl md:text-3xl">Strategic thinker + Outgoing personality</span>
+        </div>
+        <div class="flex flex-col items-center justify-center min-h-3xl bg-white border-2 border-orange-200 rounded-xl p-6">
+          <span class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-orange-100 text-orange-600 font-bold text-3xl mb-4">✓</span>
+          <span class="text-black font-medium text-center text-3xl md:text-3xl">Experience in content, marketing, and leadership</span>
+        </div>
+        <div class="flex flex-col items-center justify-center min-h-3xl bg-white border-2 border-orange-200 rounded-xl p-6">
+          <span class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-orange-100 text-orange-600 font-bold text-3xl mb-4">✓</span>
+          <span class="text-black font-medium text-center text-3xl md:text-3xl">Video editing or design skills (Bonus)</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- As an axlr8 champion you will Section -->
+  <section class="py-10 px-4 md:px-20 bg-[#faf9f4]">
+    <h2 class="text-4xl md:text-6xl font-bold text-center mb-6" style="font-family: 'Space Mono', monospace;">as an axlr8 champion you will:</h2>
+    <div class="flex flex-col md:flex-row gap-10 justify-center items-center mb-10">
+      <div class="bg-white rounded-xl shadow p-10 w-full max-w-xl flex flex-col items-center text-center border-2 border-orange-100">
+        <img src="grp2.png" alt="Group 2" class="w-40 h-40 rounded-full mb-8 object-contain" />
+        <span class="font-mono text-black text-xl">Create viral content and build a community of AI enthusiasts on your campus</span>
+      </div>
+      <div class="bg-white rounded-xl shadow p-10 w-full max-w-xl flex flex-col items-center text-center border-2 border-orange-100">
+        <img src="grp3.png" alt="Group 3" class="w-40 h-40 rounded-full mb-8 object-contain" />
+        <span class="font-mono text-black text-xl">Create viral content and build a community of AI enthusiasts on your campus</span>
+      </div>
+      <div class="bg-white rounded-xl shadow p-10 w-full max-w-xl flex flex-col items-center text-center border-2 border-orange-100">
+        <img src="grp.png" alt="Group" class="w-40 h-40 rounded-full mb-8 object-contain" />
+        <span class="font-mono text-black text-xl">Create viral content and build a community of AI enthusiasts on your campus</span>
+      </div>
+    </div>
+    <div class="flex justify-center">
+      <a href="#form" class="bg-orange-600 text-white px-8 py-3 rounded font-mono font-bold text-lg shadow hover:bg-orange-700 transition">apply now</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="reveal bg-orange-600 text-white px-6 py-12 md:px-20 text-center space-y-12">
+    <!-- Email Subscription -->
+    <div class="space-y-2">
+      <p>Get the latest updates from axlr8.</p>
+      <div class="flex justify-center items-center gap-2 border-b border-white max-w-md mx-auto">
+        <input type="email" placeholder="Enter Email Address" class="bg-orange-600 text-white outline-none py-2 w-full placeholder-white">
+        <button class="font-bold">SUBMIT</button>
+      </div>
+    </div>
+
+    <!-- Navigation Links -->
+    <div class="flex flex-wrap justify-center gap-6 font-bold text-sm">
+      <a href="#">BLOG</a>
+      <a href="#">REFER A CANDIDATE</a>
+      <a href="#">REFER A STARTUP</a>
+      <a href="#">FAQS</a>
+      <a href="#">CONTACT</a>
+    </div>
+
+    <!-- Social Icons -->
+    <div class="flex justify-center gap-6 text-3xl">
+      <a href="https://www.linkedin.com/company/axlr8-in/" aria-label="LinkedIn"><svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+  <path fill-rule="evenodd" d="M12.51 8.796v1.697a3.738 3.738 0 0 1 3.288-1.684c3.455 0 4.202 2.16 4.202 4.97V19.5h-3.2v-5.072c0-1.21-.244-2.766-2.128-2.766-1.827 0-2.139 1.317-2.139 2.676V19.5h-3.19V8.796h3.168ZM7.2 6.106a1.61 1.61 0 0 1-.988 1.483 1.595 1.595 0 0 1-1.743-.348A1.607 1.607 0 0 1 5.6 4.5a1.601 1.601 0 0 1 1.6 1.606Z" clip-rule="evenodd"/>
+  <path d="M7.2 8.809H4V19.5h3.2V8.809Z"/>
+</svg>
+</a>
+      <a href="https://www.instagram.com/axlr8_in" aria-label="Instagram"><svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+  <path fill="currentColor" fill-rule="evenodd" d="M3 8a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8Zm5-3a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3V8a3 3 0 0 0-3-3H8Zm7.597 2.214a1 1 0 0 1 1-1h.01a1 1 0 1 1 0 2h-.01a1 1 0 0 1-1-1ZM12 9a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm-5 3a5 5 0 1 1 10 0 5 5 0 0 1-10 0Z" clip-rule="evenodd"/>
+</svg>
+</a>
+      <a href="https://x.com/axlr8_in" aria-label="X"><svg class="w-6 h-6 text-gray-800 dark:text-white" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
+</a>
+    </div>
+
+    <!-- Huge Logo -->
+    <h1 class="text-[12vw] font-bold leading-none">axlr8</h1>
+
+    <!-- Bottom Row -->
+    <div class="flex flex-col sm:flex-row justify-between text-xs max-w-screen-lg mx-auto">
+      <span class="font-bold">Privacy Policy</span>
+      <span class="text-right">&copy; Axlr8 2025</span>
+    </div>
+  </footer>
+
+  <!-- Scroll Reveal Script -->
+  <script>
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    const footer = document.querySelector('.reveal');
+    observer.observe(footer);
+  </script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.153.0/build/three.min.js"></script>
+<script>
+  const containers = document.querySelectorAll('.model-container');
+  const models = [];
+
+  containers.forEach((container, index) => {
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
+    camera.position.z = 40;
+
+    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+    renderer.setSize(container.clientWidth, container.clientHeight);
+    container.appendChild(renderer.domElement);
+
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+    const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
+    const directionalLight1 = new THREE.DirectionalLight(0xffffff, 1);
+    directionalLight.castShadow = true;
+    ambientLight.position.set(0,0,10);
+    directionalLight.position.set(5,5,5);
+    directionalLight1.position.set(-10, -10, 10);
+    scene.add(ambientLight, directionalLight);
+
+    const group = new THREE.Group();
+    const voxelSize = 2;
+    const radius = 20;
+    const step = voxelSize;
+
+    for (let x = -radius; x <= radius; x += step) {
+      for (let y = -radius; y <= radius; y += step) {
+        for (let z = -radius; z <= radius; z += step) {
+          const distance = Math.sqrt(x * x + y * y + z * z);
+          if (distance < radius && distance > radius - voxelSize * 1.5) {
+            const geometry = new THREE.BoxGeometry(voxelSize, voxelSize, voxelSize);
+            const material = new THREE.MeshStandardMaterial({ color: '#e75402', flatShading: true });
+            const cube = new THREE.Mesh(geometry, material);
+            cube.position.set(x, y, z);
+            group.add(cube);
+          }
+        }
+      }
+    }
+
+    scene.add(group);
+
+    // Get the text overlay element
+    const textOverlay = container.parentElement.querySelector('span');
+    
+    const model = { 
+      container, 
+      scene, 
+      camera, 
+      renderer, 
+      group, 
+      hoverX: 0, 
+      hoverY: 0, 
+      isHovering: false,
+      textOverlay,
+      targetRotationX: 0,
+      targetRotationY: 0
+    };
+    models.push(model);
+
+    container.addEventListener('mousemove', (e) => {
+      const rect = container.getBoundingClientRect();
+      const x = ((e.clientX - rect.left) / rect.width - 0.5) * 2;
+      const y = ((e.clientY - rect.top) / rect.height - 0.5) * 2;
+      model.hoverX = y * 1;
+      model.hoverY = x * 1;
+      model.isHovering = true;
+    });
+
+    container.addEventListener('mouseleave', () => {
+      model.isHovering = false;
+    });
+  });
+
+  function animate() {
+    requestAnimationFrame(animate);
+    models.forEach(model => {
+      if (model.isHovering) {
+        model.group.rotation.x += (model.hoverX - model.group.rotation.x) * 0.1;
+        model.group.rotation.y += (model.hoverY - model.group.rotation.y) * 0.1;
+        
+        // Move text overlay with sphere rotation - attached to top plane
+        const radius = 100; // Virtual radius for text movement
+        const textX = Math.sin(model.group.rotation.y) * radius * 0.3;
+        const textY = Math.sin(model.group.rotation.x) * radius * 0.3;
+        
+        // Add 3D warping effect to simulate curvature on sphere surface
+        const rotateX = model.group.rotation.x * 0.5; // Tilt effect
+        const rotateY = model.group.rotation.y * 0.5; // Tilt effect
+        const scaleX = 1 + Math.abs(Math.sin(model.group.rotation.y)) * 0.2; // Stretch effect
+        const scaleY = 1 + Math.abs(Math.sin(model.group.rotation.x)) * 0.2; // Stretch effect
+        
+        model.textOverlay.style.transform = `translate(${textX}px, ${textY}px) rotateX(${rotateX}rad) rotateY(${rotateY}rad) scale(${scaleX}, ${scaleY})`;
+        model.textOverlay.style.transition = 'transform 0.1s ease-out';
+      } else {
+        model.group.rotation.x *= 0.95;
+        model.group.rotation.y *= 0.95;
+        
+        // Reset text position when not hovering
+        model.textOverlay.style.transform = 'translate(0px, 0px) rotateX(0rad) rotateY(0rad) scale(1, 1)';
+        model.textOverlay.style.transition = 'transform 0.3s ease-out';
+      }
+      model.renderer.render(model.scene, model.camera);
+    });
+  }
+
+  animate();
+
+  window.addEventListener('resize', () => {
+    models.forEach(model => {
+      model.camera.aspect = model.container.clientWidth / model.container.clientHeight;
+      model.camera.updateProjectionMatrix();
+      model.renderer.setSize(model.container.clientWidth, model.container.clientHeight);
+    });
+  });
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const section = document.getElementById('promise-timeline');
+      const progress = document.getElementById('timeline-progress');
+      const handshake = document.getElementById('timeline-handshake');
+      const heroCard = document.getElementById('hero-card');
+      const championCard = document.getElementById('champion-card');
+      const leaderCard = document.getElementById('leader-card');
+      const cards = [heroCard, championCard, leaderCard];
+      function getCardRect(card) {
+        const rect = card.getBoundingClientRect();
+        const sectionRect = section.getBoundingClientRect();
+        return {
+          top: rect.top - sectionRect.top,
+          bottom: rect.bottom - sectionRect.top,
+          height: rect.height
+        };
+      }
+      function updateTimeline() {
+        const sectionRect = section.getBoundingClientRect();
+        const sectionHeight = section.offsetHeight;
+        const viewportHeight = window.innerHeight;
+        let scrollPercent = (viewportHeight / 2 - sectionRect.top) / sectionHeight;
+        scrollPercent = Math.max(0, Math.min(1, scrollPercent));
+        progress.style.height = `${scrollPercent * 100}%`;
+        // Move handshake to end of progress bar
+        const barHeight = progress.offsetHeight;
+        const imgHeight = handshake.offsetHeight;
+        handshake.style.top = `${barHeight - imgHeight / 2}px`;
+        // Highlight cards
+        cards.forEach(card => {
+          card.classList.remove('shadow-3xl', 'scale-105', 'z-20');
+        });
+        // Find which card the handshake overlaps
+        const handshakeY = barHeight;
+        [heroCard, championCard, leaderCard].forEach(card => {
+          const cardRect = getCardRect(card);
+          if (handshakeY > cardRect.top && handshakeY < cardRect.bottom) {
+            card.classList.add('shadow-3xl', 'scale-105', 'z-20');
+          }
+        });
+      }
+      window.addEventListener('scroll', updateTimeline, { passive: true });
+      window.addEventListener('resize', updateTimeline);
+      updateTimeline();
+    });
+  </script>
+
+</body>
+</html>
+

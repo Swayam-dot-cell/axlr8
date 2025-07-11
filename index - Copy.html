@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>axlr8</title>
+  <link rel="icon" type="image/x-icon" href="Artboard 1.svg">
+  <!-- Font & Tailwind -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Space Mono', monospace;
+    }
+    button, .btn, a[href], input[type="submit"], input[type="button"] {
+      font-family: 'Space Mono', monospace;
+    }
+    #card-stack-section span {
+      font-family: 'Space Mono', monospace;
+    }
+    footer {
+      font-family: 'Space Mono', monospace;
+    }
+    .reveal {
+      opacity: 0;
+      transform: translateY(50px);
+      transition: all 1s ease;
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    html {  
+      scroll-behavior: smooth;  
+    }
+    body{
+      background-color: #faf9f4 /* Fallback color */
+    }
+  </style>
+</head>
+
+<body class="text-black">
+
+  <!-- Navbar -->
+  <nav class="fixed w-full px-6 py-2 flex justify-between items-center backdrop-blur-md bg-white/30">
+    <a href="index.html"><img src="./Artboard 201.png" alt="axlr8 logo" class="p-2 h-14"></a>
+    <div class="text-base space-x-8">
+      <a href="#card-stack-section" class="text-orange-600 font-bold">streams</a>
+      <a href="forms.html" class="text-black font-medium">hire via axlr8</a>
+    </div>
+  </nav>
+
+<!-- Our Promise Section -->
+<section id="promise-timeline" class="relative py-20 px-6 md:px-20" style="background-color: #faf9f4;">
+  <!-- Center Line -->
+  <div class="absolute top-0 left-1/2 w-1 h-full bg-gray-300 -translate-x-1/2 hidden md:block" style="z-index: 1;">
+    <div id="timeline-progress" class="w-full bg-orange-600" style="height: 0%;"></div>
+  </div>
+  
+  <!-- Emoji -->
+  <div id="timeline-emoji" class="absolute left-1/2 text-4xl hidden md:block" style="transform: translate(-50%, -50%); top: 0px; z-index: 2;">
+    <img src="handshake.png" alt="Handshake" class="w-16 h-16">
+  </div>
+
+  <div class="container mx-auto space-y-16 lg:space-y-24">
+    <!-- Item 1: Our Promise -->
+    <div class="timeline-item relative grid grid-cols-1 lg:grid-cols-10 items-center">
+      <div class="timeline-card bg-orange-600 text-white p-8 rounded-2xl shadow-lg lg:col-span-4 lg:col-start-7">
+        <h3 class="text-3xl font-bold lowercase">our promise</h3>
+        <p class="mt-4 text-lg">
+          We evaluate talent not just on performance but on potential, factoring in social mobility indicators like education gaps, hometown data, and access to opportunity.
+        </p>
+      </div>
+    </div>
+    
+    <!-- Item 2: Custom AI Tool -->
+    <div class="timeline-item relative grid grid-cols-1 lg:grid-cols-10 items-center">
+      <div class="timeline-card bg-black text-white p-8 rounded-2xl shadow-lg lg:col-span-4 lg:col-start-1">
+        <h3 class="text-3xl font-bold lowercase text-orange-600">custom ai tool</h3>
+        <p class="mt-4 text-lg">
+          Built on OpenAI's API, we've developed a bespoke AI-powered CV analysis tool that uses a unique scoring rubric to benchmark candidates against the top 1% of graduates whilst factoring in social mobility indicators.
+        </p>
+      </div>
+    </div>
+
+    <!-- Item 3: Manual Screening -->
+    <div class="timeline-item relative grid grid-cols-1 lg:grid-cols-10 items-center">
+      <div class="timeline-card bg-black text-white p-8 rounded-2xl shadow-lg lg:col-span-4 lg:col-start-7">
+        <h3 class="text-3xl font-bold lowercase text-orange-600">manual screening</h3>
+        <p class="mt-4 text-lg">
+          Once an applicant clears our AI screening, their full application is reviewed holistically before they're invited to a 10-minute case study interview.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const timelineSection = document.getElementById('promise-timeline');
+  if (!timelineSection) return;
+
+  const progress = document.getElementById('timeline-progress');
+  const emoji = document.getElementById('timeline-emoji');
+  const timelineItems = timelineSection.querySelectorAll('.timeline-item');
+  const cards = timelineSection.querySelectorAll('.timeline-card');
+
+  const handleScroll = () => {
+    const rect = timelineSection.getBoundingClientRect();
+    const sectionHeight = timelineSection.offsetHeight;
+    const viewportHeight = window.innerHeight;
+
+    // Calculate how much of the section is visible
+    // Starts when top of section hits viewport center, ends when bottom hits center
+    let scrollPercent = (viewportHeight / 2 - rect.top) / sectionHeight;
+    scrollPercent = Math.max(0, Math.min(1, scrollPercent));
+
+    // Update progress bar height and emoji position
+    const totalHeight = timelineSection.clientHeight;
+    progress.style.height = `${scrollPercent * 100}%`;
+    emoji.style.top = `${scrollPercent * totalHeight}px`;
+
+    // Highlight the active card
+    let activeIndex = -1;
+    let minDistance = Infinity;
+
+    timelineItems.forEach((item, index) => {
+      const itemRect = item.getBoundingClientRect();
+      const itemCenterY = itemRect.top + itemRect.height / 2;
+      const distance = Math.abs(itemCenterY - (viewportHeight / 2));
+
+      if (distance < minDistance) {
+        minDistance = distance;
+        activeIndex = index;
+      }
+    });
+
+    cards.forEach((card, index) => {
+      if (index === activeIndex) {
+        card.style.transform = 'scale(1.1)';
+        card.style.opacity = '1';
+        card.style.boxShadow = '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)';
+      } else {
+        card.style.transform = 'scale(1)';
+        card.style.opacity = '0.7';
+        card.style.boxShadow = '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)';
+      }
+    });
+  };
+
+  cards.forEach(card => {
+    card.style.transition = 'transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease, box-shadow 0.4s ease';
+  });
+
+  window.addEventListener('scroll', handleScroll, { passive: true });
+  handleScroll();
+});
+</script>
+
+  <!-- Footer -->
+  <footer class="reveal bg-orange-600 text-white px-6 py-12 md:px-20 text-center space-y-12">
+    <!-- Email Subscription -->
+    <div class="space-y-2">
+      <p>Get the latest updates from axlr8.</p>
+      <div class="flex justify-center items-center gap-2 border-b border-white max-w-md mx-auto">
+        <input type="email" placeholder="Enter Email Address" class="bg-orange-600 text-white outline-none py-2 w-full placeholder-white">
+        <button class="font-bold">SUBMIT</button>
+      </div>
+    </div>
+
+    <!-- Navigation Links -->
+    <div class="flex flex-wrap justify-center gap-6 font-bold text-sm">
+      <a href="#">BLOG</a>
+      <a href="#">REFER A CANDIDATE</a>
+      <a href="#">REFER A STARTUP</a>
+      <a href="#">FAQS</a>
+      <a href="#">CONTACT</a>
+    </div>
+
+    <!-- Social Icons -->
+    <div class="flex justify-center gap-6 text-2xl">
+      <a href="https://www.linkedin.com/company/axlr8-in/" aria-label="LinkedIn"><svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+  <path fill-rule="evenodd" d="M12.51 8.796v1.697a3.738 3.738 0 0 1 3.288-1.684c3.455 0 4.202 2.16 4.202 4.97V19.5h-3.2v-5.072c0-1.21-.244-2.766-2.128-2.766-1.827 0-2.139 1.317-2.139 2.676V19.5h-3.19V8.796h3.168ZM7.2 6.106a1.61 1.61 0 0 1-.988 1.483 1.595 1.595 0 0 1-1.743-.348A1.607 1.607 0 0 1 5.6 4.5a1.601 1.601 0 0 1 1.6 1.606Z" clip-rule="evenodd"/>
+  <path d="M7.2 8.809H4V19.5h3.2V8.809Z"/>
+</svg>
+</a>
+      <a href="https://www.instagram.com/axlr8_in" aria-label="Instagram"><svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+  <path fill="currentColor" fill-rule="evenodd" d="M3 8a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8Zm5-3a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3V8a3 3 0 0 0-3-3H8Zm7.597 2.214a1 1 0 0 1 1-1h.01a1 1 0 1 1 0 2h-.01a1 1 0 0 1-1-1ZM12 9a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm-5 3a5 5 0 1 1 10 0 5 5 0 0 1-10 0Z" clip-rule="evenodd"/>
+</svg>
+</a>
+      <a href="https://x.com/axlr8_in" aria-label="X"><svg class="w-6 h-6 text-gray-800 dark:text-white" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
+</a>
+    </div>
+
+    <!-- Huge Logo -->
+    <h1 class="text-[12vw] font-bold leading-none">axlr8</h1>
+
+    <!-- Bottom Row -->
+    <div class="flex flex-col sm:flex-row justify-between text-xs max-w-screen-lg mx-auto">
+      <span class="font-bold">Privacy Policy</span>
+      <span class="text-right">&copy; Axlr8 2025</span>
+    </div>
+  </footer>
+
+  <!-- Scroll Reveal Script -->
+  <script>
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    const footer = document.querySelector('.reveal');
+    observer.observe(footer);
+  </script>
+
+</body>
+</html>
